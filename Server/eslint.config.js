@@ -14,7 +14,6 @@ export default [
       sourceType: 'module',
     },
     rules: {
-      'no-console': 'warn',
       eqeqeq: ['error', 'always'],
       curly: ['error', 'all'],
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],

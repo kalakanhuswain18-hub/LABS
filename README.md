@@ -159,7 +159,7 @@ If linting fails, the commit is blocked — fix the errors and try again.
 
 | Rule                     | Severity | Meaning                                                                                                                 |
 | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `no-console`             | warn     | Prevents `console.log` / `console.error` from being committed — use a logger or remove before production                |
+|                          |
 | `eqeqeq`                 | error    | Enforces strict equality (`===` / `!==`) instead of loose (`==` / `!=`) to avoid type-coercion bugs                     |
 | `curly`                  | error    | Requires braces `{}` around all control flow bodies (`if`, `else`, `for`, `while`) — no single-line unbraced statements |
 | `no-unused-vars`         | warn     | Flags variables that are declared but never referenced — prefix with `_` to intentionally ignore                        |
