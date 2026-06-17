@@ -60,7 +60,7 @@ File-based MDX docs with dark mode, local search, sidebar navigation, and live S
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ChandrakantaMandal/LABS
 cd AI-Mentor-Updated
 ```
 
@@ -74,7 +74,7 @@ cp .env.example .env
 npm run dev
 ```
 
-> See [`backend/README.md`](./Server/README.md) for full setup guide.
+> See [`Server/README.md`](./Server/README.md) for full setup guide.
 
 ### 3. Setup Frontend
 
@@ -86,7 +86,7 @@ cp .env.example .env
 npm run dev
 ```
 
-> See [`frontend/README.md`](./Client/README.md) for full setup guide.
+> See [`Client/README.md`](./Client/README.md) for full setup guide.
 
 ---
 
@@ -159,7 +159,6 @@ If linting fails, the commit is blocked — fix the errors and try again.
 
 | Rule                     | Severity | Meaning                                                                                                                 |
 | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-|                          |
 | `eqeqeq`                 | error    | Enforces strict equality (`===` / `!==`) instead of loose (`==` / `!=`) to avoid type-coercion bugs                     |
 | `curly`                  | error    | Requires braces `{}` around all control flow bodies (`if`, `else`, `for`, `while`) — no single-line unbraced statements |
 | `no-unused-vars`         | warn     | Flags variables that are declared but never referenced — prefix with `_` to intentionally ignore                        |
