@@ -1,10 +1,119 @@
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum Language {
+  C
+  CPP
+  PYTHON
+  JAVA
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum SubmissionStatus {
+  ACCEPTED
+  WRONG_ANSWER
+  TIME_LIMIT_EXCEEDED
+  RUNTIME_ERROR
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role     @default(STUDENT)
+  createdAt DateTime @default(now())
+  profile   Profile?
+  submissions Submission[]
+}
+
+model Profile {
+  id                String                    @id @default(uuid())
+  userId            String                    @unique
+  user              User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badges            String[]
+  points            Int                       @default(0)
+  completedProblems ProfileCompletedProblem[]
+  completedCourses  ProfileCompletedCourse[]
+}
+
+model Course {
+  id          String                   @id @default(uuid())
+  title       String
+  description String
+  language    Language
+  topics      Topic[]
+  completedBy ProfileCompletedCourse[]
+}
+
+model Topic {
+  id       String @id @default(uuid())
+  courseId String
+  course   Course @relation(fields: [courseId], references: [id])
+  title    String
+  content  String // Markdown or rich text content
+
+  @@index([courseId])
+}
+
+model Problem {
+  id          String                    @id @default(uuid())
+  title       String
+  description String
+  difficulty  Difficulty
+  tags        String[] // Array, DP, Graphs, etc.
+  testCases   Json                      // Input/Output JSON
+  submissions Submission[]
+  completedBy ProfileCompletedProblem[]
+}
+
+model Submission {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  problemId String
+  problem   Problem  @relation(fields: [problemId], references: [id])
+  code      String
+  language  Language
+  status    SubmissionStatus
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([problemId])
+}
+
+model ProfileCompletedProblem {
+  profileId String
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  problemId String
+  problem   Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@id([profileId, problemId])
+}
+
+model ProfileCompletedCourse {
+  profileId String
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@id([profileId, courseId])
 }
 
 

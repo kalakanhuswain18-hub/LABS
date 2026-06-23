@@ -79,10 +79,11 @@ npm run dev
 ### 3. Setup Client
 
 ```bash
+cd ../Client
 cd Client
 npm install
 cp .env.example .env
-# Fill in your credentials in .env
+# Fill in credentials in .env
 npm run dev
 ```
 
