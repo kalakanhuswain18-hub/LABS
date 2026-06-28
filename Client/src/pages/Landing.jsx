@@ -203,9 +203,35 @@ export default function Landing() {
                   </div>
                 </pre>
               </div>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, blanditiis minus nisi
-              soluta debitis dignissimos voluptatem hic aperiam reprehenderit, explicabo modi non,
-              odio quia. Aut sit dignissimos quidem excepturi cupiditate.
+              {/* --- CODE CONTROL ACTION PANEL (Balanced & Lifted Up) --- */}
+              <div className="flex items-center justify-between mt-6 pt-4 pb-4 border-t border-[#1e293b] pr-4 md:pr-8">
+                {/* Left side info (Environment tag) */}
+                <span className="text-xs text-[#94a3b8] font-mono pl-2">
+                  Environment: <span className="text-[#38bdf8]">Python 3.10</span>
+                </span>
+
+                {/* Action Buttons with bottom & top breathing space */}
+                <div className="flex items-center gap-3 mr-2 md:mr-6 mb-2">
+                  {/* Run Code Button */}
+                  <button
+                    type="button"
+                    onClick={() => console.log('Running code...')}
+                    className="bg-[#111b33] hover:bg-[#1b2b4f] border border-[#334155] hover:border-[#6366f1]/50 text-[#dae2fd] px-5 py-2 rounded-xl text-sm font-semibold tracking-wide flex items-center gap-2 transition-all duration-200 active:scale-95"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-[#4edea3] animate-pulse"></span>
+                    Run Code
+                  </button>
+
+                  {/* Submit Button */}
+                  <button
+                    type="button"
+                    onClick={() => console.log('Submitting code...')}
+                    className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:from-[#4f46e5] hover:to-[#9333ea] text-white px-6 py-2 rounded-xl text-sm font-bold tracking-wide shadow-[0_4px_20px_rgba(99,102,241,0.3)] hover:shadow-[0_6px_24px_rgba(99,102,241,0.5)] transition-all duration-200 active:scale-95"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* AI Panel */}
@@ -394,9 +420,7 @@ export default function Landing() {
             <div className="col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <Terminal className="text-[#c3c0ff] w-6 h-6" />
-                <span className="text-2xl font-bold text-[#c3c0ff] tracking-tight">
-                  CodeLearn AI
-                </span>
+                <span className="text-2xl font-bold text-[#c3c0ff] tracking-tight">LABS</span>
               </div>
               <p className="text-sm text-[#c7c4d8] mb-6 max-w-xs leading-relaxed">
                 Empowering the next generation of software engineers with AI-driven education.
@@ -502,9 +526,7 @@ export default function Landing() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-slate-800/50 gap-4">
-            <p className="text-sm text-slate-500">
-              © 2024 CodeLearn AI. Built for the modern engineer.
-            </p>
+            <p className="text-sm text-slate-500">© 2026 LABS. Built for the modern engineer.</p>
             <div className="flex gap-6">
               <a className="text-sm text-slate-500 hover:text-[#dae2fd]" href="#terms">
                 Terms
