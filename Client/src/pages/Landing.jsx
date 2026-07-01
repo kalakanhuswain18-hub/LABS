@@ -278,7 +278,7 @@ export default function Landing() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  title: 'Interactive Lessons',
+                  title: 'Documentations',
                   desc: 'Learn by doing with live code execution in every single module.',
                   icon: Layers,
                   iconColor: 'text-indigo-500',
