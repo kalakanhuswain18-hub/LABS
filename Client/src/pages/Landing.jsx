@@ -315,6 +315,30 @@ export default function Landing() {
                   <p className={`text-sm ${theme.textMuted}`}>{item.desc}</p>
                 </div>
               ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final */}
+        <section className="py-24 px-6 text-center relative overflow-hidden bg-[radial-gradient(circle_at_50%_50%,rgba(79,70,229,0.08)_0%,transparent_70%)]">
+          <div className="max-w-3xl mx-auto relative z-10">
+            <h2 className="text-5xl font-bold tracking-tight mb-4">
+              Ready to start your coding journey?
+            </h2>
+            <p className="text-lg text-[#c7c4d8] mb-10">
+              Join thousands of students and start building with the power of AI today.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/login"
+                className="bg-[#4f46e5] text-white px-10 py-4 rounded-lg text-2xl font-semibold hover:scale-[0.98] transition-transform active:scale-95 inline-flex items-center justify-center"
+              >
+                Create Free Account
+              </Link>
+              <button className="px-10 py-4 rounded-lg bg-[#171f33] border border-slate-700 text-2xl font-semibold hover:bg-[#2d3449] transition-colors active:scale-95">
+                Contact Enterprise
+              </button>
             </div>
           </div>
         </section>
